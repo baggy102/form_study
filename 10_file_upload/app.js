@@ -12,7 +12,7 @@ const uploadDetail = multer({
   storage: multer.diskStorage({
     destination(req, file, done) {
       // destination: 경로설정
-      // done : callback 함수
+      // docne : callback 함수
       done(null, 'uploads/');
     },
     filename(req, file, done) {
