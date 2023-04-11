@@ -13,74 +13,24 @@
         color: blue;
         font-weight: 700;
       }
+
+      .error {
+      color: red;
+      font-weight: 700;
+    }
     </style>
   </head>
   <body>
-    <h1>axios 폼 전송 실습 풀이</h1>
-    <form name="register">
-      <label for="username">이름</label>
-      <input type="text" name="username" id="username">
-      <br>
-  
-      <fieldset>
-        <legend>성별</legend>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">남자</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">여자</label>
-      </fieldset>
-      <br>
-  
-      <fieldset>
-        <legend>생년월일</legend>
-        <!-- <input type="date"> -->
-  
-        <select name="birthYear" id="year">
-          <% for (let i = 0; i < 50; i++) { %>
-          <option value="<%= 2010 - i %>"><%= 2010 - i %></option>
-          <% } %>
-        </select>
-        <label for="year">년</label>
-        <select name="birthMonth" id="month">
-          <% for (let i = 1; i < 13; i++) { %>
-          <option value="<%= i %>"><%= i %></option>
-          <% } %>
-        </select>
-        <label for="month">월</label>
-        <select name="birthDay" id="day">
-          <% for (let i = 1; i < 31; i++) { %>
-          <option value="<%= i %>"><%= i %></option>
-          <% } %>
-        </select>
-        <label for="day">일</label>
-      </fieldset>
-      <br>
-  
-      <fieldset>
-        <legend>관심사</legend>
-        <input type="checkbox" id="travle" name="hobby" value="travle">
-        <label for="travle">여행</label>
-        <input type="checkbox" id="fashion" name="hobby" value="fashion">
-        <label for="fashion">패션</label>
-        <input type="checkbox" id="food" name="hobby" value="food">
-        <label for="food">음식</label>
-      </fieldset>
-      <br>
-  
-      <button type="button" onclick="clickRegister();">회원가입</button>
-    </form>
-    <div class="register-result"></div>
-    <hr>
-  
+    
     <p>app.js에 저장한 id는 banana이고, pw는 4321이다.</p>
-    <form name="login">
-      <label for="userId">아이디</label>
-      <input type="text" id="userId" name="userId">
-      <label for="userPw">비밀번호</label>
-      <input type="password" id="userPw" name="userPw">
-      <button type="button" onclick="clickLogin();">로그인</button>
-    </form>
-    <div class="login-result"></div>
+  <form name="login">
+    <label for="userId">아이디</label>
+    <input type="text" id="userId" name="userId">
+    <label for="userPw">비밀번호</label>
+    <input type="password" id="userPw" name="userPw">
+    <button type="button" onclick="clickLogin();">로그인</button>
+  </form>
+  <div class="login-result"></div>
 
   <script>
     const registerResult = document.querySelector('.register-result')
@@ -105,6 +55,7 @@
       //   registerResult.textContent = `${response.data.username}님 환영합니다! 가입이 완료되었습니다`
       //   registerResult.classList.add('success')
       // })
+
 
       // sol2) async/await 
       const response = await axios({
