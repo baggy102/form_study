@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>login</title>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>로그인</h1>
+      <p>
+        아이디는 <b>banana</b><br />
+        비밀번호는 <b>1234</b>
+      </p>
+
+      <form action="/login" method="POST">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="id">ID</span>
+          <input type="text" class="form-control" aria-label="id input" aria-describedby="id" name="id" />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="pw">PW</span>
+          <input type="password" class="form-control" aria-label="pw input" aria-describedby="pw" name="pw" />
+        </div>
+
+        <button type="submit" class="btn btn-dark" onclick="clickLogin()">Login</button>
+        <br />
+        <a href="/">Home</a>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    /*     function clickLogin() {
+      axios({
+        url: '/login',
+        method: post,
+      });
+    } */
+    /*  function clickLogin() {
+        if(form.Id.value === && pw ===) {
+
+        }
+    } */
+    /* id : banana, pw : 1234 -> login
+        session  */
+  </script>
+</html>
