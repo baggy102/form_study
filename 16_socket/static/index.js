@@ -116,6 +116,7 @@ socket.on('newMessage', (data) => {
 
   // divChat.textContent = `${data.nick} : ${data.msg}`; // [실습4]
   divChat.textContent = divChat.textContent + `${data.nick} : ${data.msg}`; // [실습5]
+  divChat.classList.add(`${data.id}`);
   // dm; divChat.textContent = '(속닥속닥)' + 누가 : 메세지
   // not dm; divChat.textContent = '' + 누가 : 메세지
 
@@ -130,5 +131,15 @@ socket.on('newMessage', (data) => {
   // div를 chatList 에 추가
 
   // 메세지가 많아져서 스크롤이 생기더라도 하단 고정
-  chatList.scrillTOp = chatList.scrollHeight;
+  chatList.scrollTOp = chatList.scrollHeight;
 });
+
+function cancle() {
+  const chatList = document.querySelector('#chat-list');
+  const lastMsg = chatList.lastElementChild;
+  console.log(lastMsg);
+  if (lastMsg.classList.contains('my-chat')) {
+    const messageDiv = document.querySelector(`.${lastMsg.classList}`);
+    messageDiv.remove();
+  }
+}

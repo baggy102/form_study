@@ -17,6 +17,7 @@ app.get('/', function (req, res) {
 // : 닉네임이 겹치지 않도록 객체({ })를 사용함
 // { 소켓_아이디: 닉네임, ... }
 const nickObj = {};
+let msgID = 0;
 
 // 닉네임 리스트 객체 업데이트
 // 유저가 들어오거나 퇴장할 때 내역 업데이트
@@ -81,6 +82,7 @@ io.on('connection', (socket) => {
   // [실습4] 채팅창 메세지 전송 Step1
   socket.on('send', (obj) => {
     console.log('socket in send >>', obj);
+    msgID++;
     // [전체] 선택하고 전송시 -> DM : 'ALL'
     // 특정 닉네임ㅇ르 선택하고 전송 -> dm: socket.id
 
@@ -98,7 +100,7 @@ io.on('connection', (socket) => {
     if (obj.dm !== 'all') {
       //dm 전송
       let dmSocketId = obj.dm; // 각 닉네임에 해당하는 socket.id
-      const sendData = { nick: obj.myNick, dm: '(속닥속닥)', msg: obj.msg };
+      const sendData = { nick: obj.myNick, dm: '(속닥속닥)', msg: obj.msg, id: msgID };
 
       // 1. dm을 보내고자하는 그 socket.id 한테 메세지 전송
       io.to(dmSocketId).emit('newMessage', sendData);
@@ -106,12 +108,11 @@ io.on('connection', (socket) => {
       socket.emit('newMessage', sendData);
     } else {
       //all 전송 (전체 공지)
-      const sendData = { nick: obj.myNick, msg: obj.msg };
+      const sendData = { nick: obj.myNick, msg: obj.msg, id: msgID };
       io.emit('newMessage', sendData);
     }
   });
 });
-
 // 주의) socket 을 사용할 때는 http.listen으로 PORT 열어야 함!!!
 http.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);

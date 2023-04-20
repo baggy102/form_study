@@ -1,14 +1,32 @@
 body {
-  background-color: aliceblue;
+  background-color: rgb(11, 11, 138);
+  font-family: 'Black Han Sans', sans-serif;
+  font-family: 'Noto Serif KR', serif;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  color: khaki;
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
 /* [실습2] 채팅창 UI 만들기 */
+.chat-box {
+  color: white;
+  text-align: center;
+}
+
 .chat-list {
-  background-color: skyblue;
+  background-color: gray;
   width: 50%;
   height: 500px;
   padding: 10px;
   overflow-y: auto;
+  margin: 0 auto;
 }
 
 .chat-list div {
@@ -25,24 +43,29 @@ body {
 }
 
 .my-chat div {
-  background-color: yellow;
-  color: black;
+  color: rgb(201, 201, 201);
+}
+
+.other-chat {
+  text-align: left;
 }
 
 .other-chat div {
-  background-color: white;
+  color: rgb(201, 201, 201);
 }
 
 /* [실습3] DM 기능 */
 .secret-chat div {
-  background-color: white;
+  color: rgb(201, 201, 201);
 }
 
 /* [실습3] */
 .notice {
   text-align: center;
-  color: #005397;
+  color: gray;
   font-size: 12px;
+  background-color: black;
+  box-shadow: 50px, 20px, red !important;
 }
 
 .d-none {

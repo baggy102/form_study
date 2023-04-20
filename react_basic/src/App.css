@@ -1,0 +1,51 @@
+.rain {
+  position: absolute;
+}
+.red {
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  left: 0px;
+}
+
+.orange {
+  background-color: orange;
+  width: 30px;
+  height: 50px;
+  left: 30px;
+}
+
+.yellow {
+  background-color: yellow;
+  width: 30px;
+  height: 80px;
+  left: 60px;
+}
+
+.green {
+  background-color: green;
+  width: 30px;
+  height: 100px;
+  left: 90px;
+}
+
+.blue {
+  background-color: blue;
+  width: 30px;
+  height: 130px;
+  left: 120px;
+}
+
+.navy {
+  background-color: navy;
+  width: 30px;
+  height: 150px;
+  left: 150px;
+}
+
+.purple {
+  background-color: purple;
+  width: 30px;
+  height: 170px;
+  left: 180px;
+}

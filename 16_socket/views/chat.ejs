@@ -10,17 +10,22 @@
 
     <link rel="stylesheet" href="/static/index.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet" />
+
     <title>✨ My Chat</title>
   </head>
 
   <body>
-    <h1>채팅</h1>
-
+    <header>
+      <h1>피씨-통신</h1>
+      <div class="entry-box">
+        <input type="text" id="nickname" placeholder="Nickname" autofocus />
+        <button type="button" onclick="entry()">입장</button>
+      </div>
+    </header>
     <!-- [실습3-2] 채팅창 입장 안내 문구 socket.id -> nickname -->
-    <div class="entry-box">
-      <input type="text" id="nickname" placeholder="Nickname" autofocus />
-      <button type="button" onclick="entry()">입장</button>
-    </div>
 
     <div class="chat-box d-none">
       <div id="chat-list" class="chat-list">
@@ -36,6 +41,7 @@
       >에게
       <input type="text" id="message" />
       <button onclick="send()" type="button">전송</button>
+      <button onclick="cancle()" type="button">삭제</button>
     </div>
 
     <!-- [실습1] 각 버튼을 누를때 마다 서버로 메세지 보내기
