@@ -1,10 +1,12 @@
 import './App.css';
-import SyntheticEvent from './SyntheticEvent';
+import Counter from './Counter';
+import Prac1 from './Handler';
 
 function App() {
   return (
     <div className="App">
-      <SyntheticEvent />
+      {/* <Counter /> */}
+      <Prac1 />
     </div>
   );
 }
